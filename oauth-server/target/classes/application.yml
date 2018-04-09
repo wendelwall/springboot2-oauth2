@@ -1,0 +1,11 @@
+server:
+  servlet:
+    context-path: /sso
+
+spring:
+  redis:
+    database: 0
+    host: 127.0.0.1
+    password:
+    timeout: 5000
+    port: 6379

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/oauth-client/oauth-client.iml" filepath="$PROJECT_DIR$/oauth-client/oauth-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oauth-resource/oauth-resource.iml" filepath="$PROJECT_DIR$/oauth-resource/oauth-resource.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oauth-server/oauth-server.iml" filepath="$PROJECT_DIR$/oauth-server/oauth-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sso-oauth-demo.iml" filepath="$PROJECT_DIR$/sso-oauth-demo.iml" />
+    </modules>
+  </component>
+</project>
