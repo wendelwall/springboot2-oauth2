@@ -10,5 +10,5 @@
 ![输入图片说明](https://gitee.com/uploads/images/2018/0409/141506_bf39dfc5_1305332.png "屏幕截图.png")
 3. 登录完成后，返回到初始页面
 ![输入图片说明](https://gitee.com/uploads/images/2018/0409/141655_d8533afd_1305332.png "屏幕截图.png")
-4. 访问资源服务器http://localhost:8088/user?access_token=0ce88c9c-d188-4cfd-b919-e03e5bd4268c，需要将tokenValue的值作为参数传给资源服务器
+4. 访问资源服务器,需要将tokenValue的值作为参数传给资源服务器(http://localhost:8088/user?access_token=0ce88c9c-d188-4cfd-b919-e03e5bd4268c)
 ![输入图片说明](https://gitee.com/uploads/images/2018/0409/141810_0ce4ccd2_1305332.png "屏幕截图.png")
