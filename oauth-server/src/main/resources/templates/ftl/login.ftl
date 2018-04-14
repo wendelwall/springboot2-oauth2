@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Pig微服务统一认证</title>
+    <title>认证服务器端登录页面</title>
 
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/signin.css" rel="stylesheet">
@@ -17,7 +17,7 @@
   <body>
     <div class="container form-margin-top">
       <form class="form-signin" action="/login" method="post">
-        <h2 class="form-signin-heading" align="center">统一认证系统</h2>
+        <h2 class="form-signin-heading" align="center">认证服务器端登录页面</h2>
         <input type="text" name="username" class="form-control form-margin-top" placeholder="账号" required autofocus>
         <input type="password" name="password" class="form-control" placeholder="密码" required>
         <button class="btn btn-lg btn-primary btn-block" type="submit">sign in</button>
