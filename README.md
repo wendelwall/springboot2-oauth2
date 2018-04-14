@@ -60,6 +60,8 @@ public class ServerConfig extends AuthorizationServerConfigurerAdapter {
 ![输入图片说明](https://gitee.com/uploads/images/2018/0414/223329_07a9b22c_1305332.png "屏幕截图.png")
 
 3.访问资源服务器的接口，有两种方式
+
 1）作为参数传给后端资源服务器：access_token=68d4a48d-91a3-4e20-9198-cb2b258e9a14
+
 2）作为请求头传给后端资源服务器：
 ![输入图片说明](https://gitee.com/uploads/images/2018/0414/223542_bf4e0684_1305332.png "屏幕截图.png")
