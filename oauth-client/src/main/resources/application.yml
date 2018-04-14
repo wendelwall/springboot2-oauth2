@@ -1,4 +1,4 @@
-auth-server: http://localhost:8080/sso # 认证服务器地址
+auth-server: http://localhost:8080 # 认证服务器地址
 
 server:
   port: 8085

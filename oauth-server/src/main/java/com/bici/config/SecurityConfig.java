@@ -37,12 +37,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/**/*.js",
-                        "/**/*.css",
-                        "/**/*.jpg",
-                        "/**/*.png",
-                        "/**/*.woff2"
-                )
+                .antMatchers("/**/*.css")
                 .permitAll()
                 .anyRequest()
                 .authenticated()
@@ -51,7 +46,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .loginPage("/login")
                 .permitAll()
                 .and()
-                // 暂时禁用CSRF，否则无法提交表单
+                // 暂时禁用CSRF，否则无法提交登录表单
                 .csrf().disable();
     }
 }

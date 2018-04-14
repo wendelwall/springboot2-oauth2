@@ -37,7 +37,7 @@ public class ServerConfig extends AuthorizationServerConfigurerAdapter {
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         clients.inMemory()
-                .withClient("biciclient")
+                .withClient("client")
                 // secret密码配置从 Spring Security 5.0开始必须以 {加密方式}+加密后的密码 这种格式填写
                 /*
                  *   当前版本5新增支持加密方式：
@@ -52,9 +52,9 @@ public class ServerConfig extends AuthorizationServerConfigurerAdapter {
                  *   SHA-256 - new MessageDigestPasswordEncoder("SHA-256")
                  *   sha256 - StandardPasswordEncoder
                  */
-                .secret("{noop}bicisecret")
+                .secret("{noop}secret")
                 .scopes("all")
-                .authorizedGrantTypes("authorization_code", "refresh_token")
+                .authorizedGrantTypes("authorization_code", "password", "refresh_token")
                 .autoApprove(true);
     }
 
