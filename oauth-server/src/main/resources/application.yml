@@ -1,7 +1,10 @@
+<<<<<<< HEAD
 server:
   servlet:
     context-path: /auth
 
+=======
+>>>>>>> fae96c615f08af72ac4b3c03d5870995cbbd51b0
 spring:
   redis:
     database: 0

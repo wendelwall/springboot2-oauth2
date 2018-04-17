@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 auth-server: http://localhost:8080/auth # 认证服务器地址
+=======
+auth-server: http://localhost:8080 # 认证服务器地址
+>>>>>>> fae96c615f08af72ac4b3c03d5870995cbbd51b0
 
 server:
   port: 8085
