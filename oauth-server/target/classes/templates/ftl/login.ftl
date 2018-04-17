@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>认证中心统一登录平台</title>
+    <title>认证服务器端登录页面</title>
 
     <link href="/auth/css/bootstrap.min.css" rel="stylesheet">
     <link href="/auth/css/signin.css" rel="stylesheet">

@@ -71,6 +71,7 @@ public class ServerConfig extends AuthorizationServerConfigurerAdapter {
                 .tokenStore(new BiciRedisTokenStore(redisConnectionFactory))
                 // 不添加userDetailsService，刷新access_token时会报错
                 .userDetailsService(userDetailsService);
+        // 使用最基本的InMemoryTokenStore生成token
         //endpoints.authenticationManager(authenticationManager).tokenStore(memoryTokenStore());
 
 
