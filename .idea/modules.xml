@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/oauth-client/oauth-client.iml" filepath="$PROJECT_DIR$/oauth-client/oauth-client.iml" />
       <module fileurl="file://$PROJECT_DIR$/oauth-resource/oauth-resource.iml" filepath="$PROJECT_DIR$/oauth-resource/oauth-resource.iml" />
       <module fileurl="file://$PROJECT_DIR$/oauth-server/oauth-server.iml" filepath="$PROJECT_DIR$/oauth-server/oauth-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oauth-ui/oauth-ui.iml" filepath="$PROJECT_DIR$/oauth-ui/oauth-ui.iml" />
       <module fileurl="file://$PROJECT_DIR$/sso-oauth-demo.iml" filepath="$PROJECT_DIR$/sso-oauth-demo.iml" />
     </modules>
   </component>

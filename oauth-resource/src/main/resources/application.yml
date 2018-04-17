@@ -1,12 +1,12 @@
-auth-server: http://localhost:8080/sso # 认证服务器地址
+auth-server: http://localhost:8090/auth # 认证服务器地址
 
 server:
   port: 8088
 security:
   oauth2:
     client:
-      client-id: biciclient # 授权服务器配置的client id
-      client-secret: bicisecret # 授权服务器配置的client secret
+      client-id: client # 授权服务器配置的client id
+      client-secret: secret # 授权服务器配置的client secret
       scope: all
       access-token-uri: ${auth-server}/oauth/token # 获取access token接口
       user-authorization-uri: ${auth-server}/oauth/authorize #  获取Authorization Code接口

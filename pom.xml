@@ -11,6 +11,7 @@
         <module>oauth-server</module>
         <module>oauth-resource</module>
         <module>oauth-client</module>
+        <module>oauth-ui</module>
     </modules>
     <packaging>pom</packaging>
     <parent>

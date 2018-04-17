@@ -4,12 +4,15 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@EnableOAuth2Sso
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+
 @SpringBootApplication
 @RestController
 public class ClientApplication {
@@ -19,12 +22,4 @@ public class ClientApplication {
         SpringApplication.run(ClientApplication.class, args);
     }
 
-    // sso测试接口
-    @GetMapping("/user")
-    public Authentication getUser(Authentication authentication) {
-        System.out.println("auth : " + authentication);
-        //Authentication authentication1 = SecurityContextHolder.getContext().getAuthentication();
-
-        return authentication;
-    }
 }
