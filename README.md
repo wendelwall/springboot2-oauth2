@@ -64,3 +64,27 @@ public class ServerConfig extends AuthorizationServerConfigurerAdapter {
 
 2）作为请求头传给后端资源服务器：
 ![输入图片说明](https://gitee.com/uploads/images/2018/0414/223542_bf4e0684_1305332.png "屏幕截图.png")
+
+4.刷新access_token的方式
+![输入图片说明](https://gitee.com/uploads/images/2018/0417/144334_9f7f8bfa_1305332.png "屏幕截图.png")
+
+5.退出登录
+```
+    @Autowired
+    @Qualifier("consumerTokenServices")
+    ConsumerTokenServices tokenServices;
+
+    @RequestMapping(value = "/auth/logout", method = POST)
+    @ResponseBody
+    public String logout(HttpServletRequest request) {
+        // 从请求头获取前端传过来的token，格式：token_type access_token
+        String token = request.getHeader("Authorization");
+        // 获取access_token
+        token =  token.split(" ")[1];
+        // 移除token，使得用户退出登录
+        if(tokenServices.revokeToken(token)) {
+            return "success";
+        }
+        return "failed";
+    }
+```
