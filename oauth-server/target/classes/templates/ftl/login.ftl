@@ -19,6 +19,7 @@
         <h2 class="form-signin-heading" align="center">认证中心统一登录平台</h2>
         <input type="text" name="username" class="form-control form-margin-top" placeholder="账号" required autofocus>
         <input type="password" name="password" class="form-control" placeholder="密码" required>
+        <input type="checkbox" name="remember-me">自动登录
         <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
       </form>
     </div>

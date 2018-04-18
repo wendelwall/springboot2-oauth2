@@ -41,16 +41,24 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/**/*.js",
                         "/**/*.css"
                 )
-                .permitAll()
-                .anyRequest()
-                .authenticated()
+                    .permitAll()
+                    .anyRequest()
+                    .authenticated()
                 .and()
-                .formLogin()
-                .loginPage("/login")
-                .permitAll()
+                    .formLogin()
+                    .loginPage("/login")
+                    .permitAll()
                 .and()
-                // 暂时禁用CSRF，否则无法提交登录表单
-                .csrf().disable();
+                    .rememberMe()
+                    // 加密的秘钥
+                    .key("unique-and-secret")
+                    // 存放在浏览器端cookie的key
+                    .rememberMeCookieName("remember-me-cookie-name")
+                    // token失效的时间，秒为单位
+                    .tokenValiditySeconds(60 * 60 *25)
+                .and()
+                    // 暂时禁用CSRF，否则无法提交登录表单
+                    .csrf().disable();
 
     }
 }
