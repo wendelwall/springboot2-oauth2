@@ -17,9 +17,9 @@ import javax.servlet.http.HttpSession;
  * @date: 2018/4/17
  */
 @RestController
-@RequestMapping("/login")
+@RequestMapping("/client")
 @Secured("ROLE_ADMIN")
-public class LoginController {
+public class ClientController {
 
     @GetMapping("/user")
     public Authentication getUser() {
@@ -28,7 +28,7 @@ public class LoginController {
     }
 
     @GetMapping("/index")
-    @Secured("ROLE_USER1")
+    @Secured("ROLE_USER")
     public String index() {
         return "index";
     }

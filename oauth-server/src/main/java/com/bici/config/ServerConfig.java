@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -14,6 +15,8 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Aut
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.InMemoryTokenStore;
+
+import javax.sql.DataSource;
 
 /**
  * @Description:
@@ -34,6 +37,10 @@ public class ServerConfig extends AuthorizationServerConfigurerAdapter {
     @Autowired
     private UserDetailsService userDetailsService;
 
+    @Autowired
+    @Qualifier("dataSource")
+    private DataSource dataSource;
+
     @Override
     public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
         // 配置token获取和验证时的策略
@@ -42,10 +49,10 @@ public class ServerConfig extends AuthorizationServerConfigurerAdapter {
 
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-        clients.inMemory()
+        /*clients.inMemory()
                 .withClient("client")
                 // secret密码配置从 Spring Security 5.0开始必须以 {加密方式}+加密后的密码 这种格式填写
-                /*
+                *//*
                  *   当前版本5新增支持加密方式：
                  *   bcrypt - BCryptPasswordEncoder (Also used for encoding)
                  *   ldap - LdapShaPasswordEncoder
@@ -57,11 +64,12 @@ public class ServerConfig extends AuthorizationServerConfigurerAdapter {
                  *   SHA-1 - new MessageDigestPasswordEncoder("SHA-1")
                  *   SHA-256 - new MessageDigestPasswordEncoder("SHA-256")
                  *   sha256 - StandardPasswordEncoder
-                 */
+                 *//*
                 .secret("{noop}secret")
                 .scopes("all")
                 .authorizedGrantTypes("authorization_code", "password", "refresh_token")
-                .autoApprove(true);
+                .autoApprove(true);*/
+        clients.jdbc(dataSource);
     }
 
     @Override

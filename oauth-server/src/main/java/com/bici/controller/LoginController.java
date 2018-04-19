@@ -40,4 +40,5 @@ public class LoginController {
         tokenServices.revokeToken(accessToken);
         return new ModelAndView("ftl/login");
     }
+
 }
