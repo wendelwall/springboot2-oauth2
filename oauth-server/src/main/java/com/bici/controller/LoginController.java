@@ -2,6 +2,7 @@ package com.bici.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.oauth2.provider.token.ConsumerTokenServices;
@@ -28,6 +29,7 @@ public class LoginController {
     }
 
     @GetMapping("/get")
+    @Secured("ROLE_ADMIN")
     @ResponseBody
     public Authentication get() {
         return SecurityContextHolder.getContext().getAuthentication();
