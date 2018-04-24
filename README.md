@@ -88,3 +88,46 @@ public class ServerConfig extends AuthorizationServerConfigurerAdapter {
         return "failed";
     }
 ```
+6.实现配置文件对称加密
+- 在pom.xml文件中添加依赖
+```$xslt
+<dependency>
+    <groupId>com.github.ulisesbocchio</groupId>
+    <artifactId>jasypt-spring-boot-starter</artifactId>
+    <version>1.17</version>
+</dependency>
+```
+- 在测试类中先加密明文
+```$xslt
+import org.jasypt.util.text.BasicTextEncryptor;
+import org.junit.Test;
+
+public class UtilTests {
+    @Test
+    public void jasyptTest() {
+        BasicTextEncryptor encryptor = new BasicTextEncryptor();
+        encryptor.setPassword("bici123456");//application.yml配置的jasypt.encryptor.password
+        String encrypted = encryptor.encrypt("root");//要加密的数据（数据库连接的用户名或密码）
+        System.out.println(encryptor.decrypt("k4LGQOt0V9uQeB3i5EDiLw=="));
+        System.out.println(encrypted);
+    }
+}
+```
+- 在application.yml配置文件中配置加密
+```$xslt
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/auth?useSSL=false&useUnicode=true&characterEncoding=utf-8
+    username: ENC(k4LGQOt0V9uQeB3i5EDiLw==)
+    password: ENC(k4LGQOt0V9uQeB3i5EDiLw==)
+    driver-class-name: com.mysql.jdbc.Driver
+  redis:
+    database: 0
+    host: 127.0.0.1
+    password:
+    timeout: 8000
+    port: 6379
+jasypt:
+  encryptor:
+    password: bici123456
+```
