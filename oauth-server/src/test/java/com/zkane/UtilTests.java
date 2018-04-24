@@ -15,5 +15,6 @@ public class UtilTests {
         String encrypted = encryptor.encrypt("root");//要加密的数据（数据库连接的用户名或密码）
         System.out.println(encryptor.decrypt("k4LGQOt0V9uQeB3i5EDiLw=="));
         System.out.println(encrypted);
+        Class<String> stringClass = String.class;
     }
 }

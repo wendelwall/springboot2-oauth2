@@ -88,7 +88,7 @@ public class ServerConfig extends AuthorizationServerConfigurerAdapter {
         return "failed";
     }
 ```
-6.实现配置文件对称加密
+### 实现配置文件对称加密
 - 在pom.xml文件中添加依赖
 ```$xslt
 <dependency>
@@ -131,3 +131,105 @@ jasypt:
   encryptor:
     password: bici123456
 ```
+
+### 使用swagger在页面展示API接口文档
+- 在pom.xml文件中加入依赖
+```$xslt
+<!-- 使用Swagger2构建强大的RESTful API文档 -->
+<dependency>
+    <groupId>io.springfox</groupId>
+    <artifactId>springfox-swagger2</artifactId>
+    <version>2.6.0</version>
+</dependency>
+<dependency>
+    <groupId>io.springfox</groupId>
+    <artifactId>springfox-swagger-ui</artifactId>
+    <version>2.6.0</version>
+</dependency>
+```
+- 创建配置类
+```$xslt
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import springfox.documentation.builders.ApiInfoBuilder;
+import springfox.documentation.builders.PathSelectors;
+import springfox.documentation.builders.RequestHandlerSelectors;
+import springfox.documentation.service.ApiInfo;
+import springfox.documentation.spi.DocumentationType;
+import springfox.documentation.spring.web.plugins.Docket;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
+@Configuration
+@EnableSwagger2
+public class Swagger2 {
+
+    @Bean
+    public Docket createRestApi() {
+        return new Docket(DocumentationType.SWAGGER_2)
+                .apiInfo(apiInfo())
+                .select()
+                .apis(RequestHandlerSelectors.basePackage("com.bici.controller"))
+                .paths(PathSelectors.any())
+                .build();
+    }
+
+    private ApiInfo apiInfo() {
+        return new ApiInfoBuilder()
+                .title("授权服务器接口文档")
+                .description("查看授权服务器的接口文档")
+                .termsOfServiceUrl("https://gitee.com/zkane/springboot2-oauth2")
+                .version("1.0")
+                .build();
+    }
+
+}
+```
+- 在controller的方法上添加注解
+```$xslt
+import com.sun.org.apache.xpath.internal.operations.Bool;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.security.access.annotation.Secured;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.oauth2.provider.token.ConsumerTokenServices;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
+
+@Controller
+public class LoginController {
+
+    @Autowired
+    @Qualifier("consumerTokenServices")
+    ConsumerTokenServices tokenServices;
+
+    @ApiOperation(value = "转发到登录页面")
+    @GetMapping("/login")
+    public ModelAndView login() {
+        return new ModelAndView("ftl/login");
+    }
+
+    @ApiOperation(value = "获取登录人的授权信息")
+    @GetMapping("/get")
+    @Secured("ROLE_ADMIN")
+    @ResponseBody
+    public Authentication get() {
+        return SecurityContextHolder.getContext().getAuthentication();
+    }
+
+    @ApiOperation(value = "退出登录", notes = "通过移除token来达到退出登录的效果", httpMethod = "GET")
+    @ApiImplicitParam(name = "accessToken", value = "用来认证的access_token", required = true, dataType = "String")
+    @GetMapping("/logout")
+    public ModelAndView logout(String accessToken) {
+        tokenServices.revokeToken(accessToken);
+        return new ModelAndView("ftl/login");
+    }
+
+}
+```
+- 在浏览器输入地址：http://localhost:8080/auth/swagger-ui.html
