@@ -1,38 +1,18 @@
-# maven ignore
-target/
-*.war
-*.ear
-*.zip
-*.tar
-*.tar.gz
-
-# eclipse ignore
-.settings/
-.project
-.classpath
-
-# idea ignore
-.idea/
-*.ipr
+build
+.gradle
+.idea
+out
 *.iml
+*.ipr
 *.iws
-
-# logs #
-logs
-
-# temp ignore
-*.log
-*.cache
-*.diff
-*.patch
-*.tmp
-*.java~
-*.properties~
-*.xml~
-
-# system ignore
 .DS_Store
-Thumbs.db
-Servers
-.metadata
-upload
+*.class
+target/
+/.shelf
+/lucene
+/.settings
+/.classpath
+/.project
+/out
+/build
+/.gradle
