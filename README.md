@@ -5,13 +5,13 @@
 3. 包含一个认证服务器，一个资源服务器，一个单点登录客户端
 
 ### 单点登录流程
-1. 输入客户端地址 http://localhost:8085/user
-
-2. 进入到认证服务器登录页面
-
-3. 登录完成后，重定向回客户端地址
-
-4. 访问资源服务器,需要将tokenValue的值作为参数传给资源服务器 http://localhost:8088/user?access_token=0ce88c9c-d188-4cfd-b919-e03e5bd4268c
+1. 先启动 oauth-server 项目，然后再启动 oauth-client 项目
+2. 输入客户端地址 http://localhost:8085/user
+![输入图片说明](https://images.gitee.com/uploads/images/2018/0821/154239_60741723_1305332.png "屏幕截图.png")
+3. 进入到认证服务器登录页面
+![输入图片说明](https://images.gitee.com/uploads/images/2018/0821/153604_5deffa0c_1305332.png "屏幕截图.png")
+4. 登录完成后，自动重定向回客户端地址
+![输入图片说明](https://images.gitee.com/uploads/images/2018/0821/154202_a945b34e_1305332.png "屏幕截图.png")
 
 ### 使用 postman 实现 password授权模式
 1. 允许使用password的授权方式
