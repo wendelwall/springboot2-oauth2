@@ -1,15 +1,16 @@
-package com.bici;
+package com.zkane;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * @author: keluosi@bicitech.cn
+ * @author: 594781919@qq.com
  * @date: 2018/4/17
  */
 @SpringBootApplication
-public class UiApplication {
+public class ClientApplication {
+
     public static void main(String[] args) {
-        SpringApplication.run(UiApplication.class, args);
+        SpringApplication.run(ClientApplication.class, args);
     }
 }

@@ -1,12 +1,13 @@
 server:
   servlet:
     context-path: /auth
+  port: 20000
 
 spring:
   datasource:
     url: jdbc:mysql://127.0.0.1:3306/springboot?useSSL=false&useUnicode=true&characterEncoding=utf-8
-    username: ENC(k4LGQOt0V9uQeB3i5EDiLw==)
-    password: ENC(k4LGQOt0V9uQeB3i5EDiLw==)
+    username: ENC(ddc3gpYHXk8o2a9TSXh9Yg==)
+    password: ENC(ddc3gpYHXk8o2a9TSXh9Yg==)
     driver-class-name: com.mysql.jdbc.Driver
   redis:
     database: 0
@@ -16,4 +17,4 @@ spring:
     port: 6379
 jasypt:
   encryptor:
-    password: bici123456
+    password: abc123

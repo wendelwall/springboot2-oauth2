@@ -3,7 +3,7 @@
 // (powered by Fernflower decompiler)
 //
 
-package com.bici.config;
+package com.zkane.config;
 
 import org.springframework.data.redis.connection.RedisConnection;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
@@ -19,7 +19,7 @@ import org.springframework.security.oauth2.provider.token.store.redis.RedisToken
 
 import java.util.*;
 
-public class BiciRedisTokenStore implements TokenStore {
+public class MyRedisTokenStore implements TokenStore {
     private static final String ACCESS = "access:";
     private static final String AUTH_TO_ACCESS = "auth_to_access:";
     private static final String AUTH = "auth:";
@@ -36,7 +36,7 @@ public class BiciRedisTokenStore implements TokenStore {
 
     private String prefix = "";
 
-    public BiciRedisTokenStore(RedisConnectionFactory connectionFactory) {
+    public MyRedisTokenStore(RedisConnectionFactory connectionFactory) {
         this.connectionFactory = connectionFactory;
     }
 

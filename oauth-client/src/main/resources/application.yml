@@ -1,4 +1,4 @@
-auth-server: http://localhost:8080/auth # 认证服务器地址
+auth-server: http://localhost:20000/auth # 认证服务器地址
 
 server:
   port: 8085

@@ -4,14 +4,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.bici</groupId>
-    <artifactId>sso-oauth-demo</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <groupId>com.zkane</groupId>
+    <artifactId>springboot2-oauth2-demo</artifactId>
+    <version>1.0.0</version>
     <modules>
         <module>oauth-server</module>
         <module>oauth-resource</module>
         <module>oauth-client</module>
-        <module>oauth-ui</module>
     </modules>
     <packaging>pom</packaging>
     <parent>

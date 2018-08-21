@@ -1,12 +1,12 @@
-package com.bici.config;
+package com.zkane.config;
 
 import org.springframework.security.core.GrantedAuthority;
 
 /**
- * @author: keluosi@bicitech.cn
+ * @author: 594781919@qq.com
  * @date: 2018/4/9
  */
-public class BiciGrantedAuthority implements GrantedAuthority {
+public class MyGrantedAuthority implements GrantedAuthority {
     private String roleId;
     private String menuId;
 
@@ -31,7 +31,7 @@ public class BiciGrantedAuthority implements GrantedAuthority {
         this.menuId = menuId;
     }
 
-    public BiciGrantedAuthority(String roleId, String menuId) {
+    public MyGrantedAuthority(String roleId, String menuId) {
         this.roleId = roleId;
         this.menuId = menuId;
     }

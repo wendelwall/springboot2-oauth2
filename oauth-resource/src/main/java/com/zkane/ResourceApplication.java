@@ -1,4 +1,4 @@
-package com.bici;
+package com.zkane;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @Description:
- * @author: keluosi@bicitech.cn
+ * @author: 594781919@qq.com
  * @Date: 2018/4/9 10:38
  * @version: 1.0
  */

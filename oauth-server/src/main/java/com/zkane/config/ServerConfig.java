@@ -1,4 +1,4 @@
-package com.bici.config;
+package com.zkane.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -19,7 +19,7 @@ import javax.sql.DataSource;
 
 /**
  * @Description:
- * @author: keluosi@bicitech.cn
+ * @author: 594781919@qq.com
  * @Date: 2018/4/8 10:48
  * @version: 1.0
  */
@@ -32,7 +32,7 @@ public class ServerConfig extends AuthorizationServerConfigurerAdapter {
     @Autowired
     RedisConnectionFactory redisConnectionFactory;
 
-    @Qualifier("biciUserDetailsService")
+    @Qualifier("myUserDetailsService")
     @Autowired
     private UserDetailsService userDetailsService;
 
@@ -75,9 +75,10 @@ public class ServerConfig extends AuthorizationServerConfigurerAdapter {
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
         // 配置tokenStore，保存到redis缓存中
         endpoints.authenticationManager(authenticationManager)
-                .tokenStore(new BiciRedisTokenStore(redisConnectionFactory))
+                .tokenStore(new MyRedisTokenStore(redisConnectionFactory))
                 // 不添加userDetailsService，刷新access_token时会报错
                 .userDetailsService(userDetailsService);
+
         // 使用最基本的InMemoryTokenStore生成token
         //endpoints.authenticationManager(authenticationManager).tokenStore(memoryTokenStore());
 

@@ -1,4 +1,4 @@
-package com.bici.config;
+package com.zkane.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -12,7 +12,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 
 /**
  * @Description:
- * @author: keluosi@bicitech.cn
+ * @author: 594781919@qq.com
  * @Date: 2018/4/8 10:46
  * @version: 1.0
  */
@@ -25,7 +25,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return super.authenticationManagerBean();
     }
 
-    @Qualifier("biciUserDetailsService")
+    @Qualifier("myUserDetailsService")
     @Autowired
     private UserDetailsService userDetailsService;
 
@@ -54,7 +54,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .key("unique-and-secret")
                     // 存放在浏览器端cookie的key
                     .rememberMeCookieName("remember-me-cookie-name")
-                    // token失效的时间，秒为单位
+                    // token失效的时间，单位为秒
                     .tokenValiditySeconds(60 * 60 * 25)*/
                 .and()
                     // 暂时禁用CSRF，否则无法提交登录表单

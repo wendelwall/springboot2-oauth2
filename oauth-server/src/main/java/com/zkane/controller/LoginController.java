@@ -1,4 +1,4 @@
-package com.bici.controller;
+package com.zkane.controller;
 
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
- * @author: keluosi@bicitech.cn
+ * @author: 594781919@qq.com
  * @date: 2018/4/9
  */
 @Controller

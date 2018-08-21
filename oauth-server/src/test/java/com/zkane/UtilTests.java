@@ -4,17 +4,18 @@ import org.jasypt.util.text.BasicTextEncryptor;
 import org.junit.Test;
 
 /**
- * @author: keluosi@bicitech.cn
+ * @author: 594781919@qq.com
  * @date: 2018/4/24
  */
 public class UtilTests {
     @Test
     public void jasyptTest() {
         BasicTextEncryptor encryptor = new BasicTextEncryptor();
-        encryptor.setPassword("bici123456");//application.yml配置的jasypt.encryptor.password
-        String encrypted = encryptor.encrypt("root");//要加密的数据（数据库连接的用户名或密码）
-        System.out.println(encryptor.decrypt("k4LGQOt0V9uQeB3i5EDiLw=="));
-        System.out.println(encrypted);
-        Class<String> stringClass = String.class;
+        // application.yml配置的jasypt.encryptor.password
+        encryptor.setPassword("abc123");
+        // 对root进行加密操作
+        System.out.println(encryptor.encrypt("root"));
+        // 进行解密操作
+        System.out.println(encryptor.decrypt("ddc3gpYHXk8o2a9TSXh9Yg=="));
     }
 }
