@@ -40,13 +40,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/**/*.js",
                         "/**/*.css"
                 )
-                    .permitAll()
-                    .anyRequest()
-                    .authenticated()
+                .permitAll()
+                .anyRequest()
+                .authenticated()
                 .and()
-                    .formLogin()
-                    .loginPage("/login")
-                    .permitAll()
+                .formLogin()
+                .loginPage("/login")
+                .permitAll()
                 // 自动登录
                 /*.and()
                     .rememberMe()
@@ -57,8 +57,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     // token失效的时间，单位为秒
                     .tokenValiditySeconds(60 * 60 * 25)*/
                 .and()
-                    // 暂时禁用CSRF，否则无法提交登录表单
-                    .csrf().disable();
+                // 暂时禁用CSRF，否则无法提交登录表单
+                .csrf().disable();
 
     }
 
