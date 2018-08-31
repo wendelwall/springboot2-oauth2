@@ -3,6 +3,7 @@
 1. 存储token使用的是redis，所以需要本地启动一个redis服务
 2. 使用数据库保存客户端信息，所以需要在数据库执行sql脚本
 3. 包含一个认证服务器，一个资源服务器，一个单点登录客户端
+4. 博客地址：https://blog.csdn.net/qq_37170583/article/details/80704660
 
 ### 单点登录流程
 1. 先启动 oauth-server 项目，然后再启动 oauth-client 项目
