@@ -4,17 +4,25 @@ server:
   port: 20000
 
 spring:
+#  security:
+#    oauth2:
+#      client:
+#        registration:
   datasource:
-    url: jdbc:mysql://127.0.0.1:3306/springboot?useSSL=false&useUnicode=true&characterEncoding=utf-8
-    username: ENC(ddc3gpYHXk8o2a9TSXh9Yg==)
-    password: ENC(ddc3gpYHXk8o2a9TSXh9Yg==)
-    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/springboot?useSSL=false&useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT
+    username: ENC(WE7YzBua6o3p6KHhh/OKug==)
+    password: ENC(Z/Z8K4CL+Xl2VuTB41xVrn1eA1MHB3R3)
+    driver-class-name: com.mysql.cj.jdbc.Driver
   redis:
     database: 0
     host: 127.0.0.1
-    password:
+    password: sqlzyydxe
     timeout: 8000
     port: 6379
+  messages:
+    basename: messages/messages_zh_CN
+    cache-duration: 3600
+    encoding: UTF-8
 jasypt:
   encryptor:
     password: abc123

@@ -33,7 +33,7 @@ VALUES
 		'{noop}secret',
 		'all',
 		'password,authorization_code,refresh_token,implicit,client_credentials',
-		NULL,
+		'http://localhost:8085/login',
 		NULL,
 		NULL,
 		NULL,

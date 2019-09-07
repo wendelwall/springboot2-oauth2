@@ -15,7 +15,9 @@ public class UtilTests {
         encryptor.setPassword("abc123");
         // 对root进行加密操作
         System.out.println(encryptor.encrypt("root"));
+        // 对密码进行加密操作
+        System.out.println(encryptor.encrypt("sqlzyydxe"));
         // 进行解密操作
-        System.out.println(encryptor.decrypt("ddc3gpYHXk8o2a9TSXh9Yg=="));
+        System.out.println(encryptor.decrypt("iMlafBuZWQONnlTJ+DZB3jMGfs1Y5zju"));
     }
 }

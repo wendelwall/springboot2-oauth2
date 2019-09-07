@@ -1,7 +1,7 @@
 auth-server: http://localhost:20000/auth # 认证服务器地址
 
 server:
-  port: 8000
+  port: 8085
 security:
   oauth2:
     client:
