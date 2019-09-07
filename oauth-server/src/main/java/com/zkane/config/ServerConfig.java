@@ -13,7 +13,7 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.token.TokenStore;
-import org.springframework.security.oauth2.provider.token.store.InMemoryTokenStore;
+import org.springframework.security.oauth2.provider.token.store.JdbcTokenStore;
 
 import javax.sql.DataSource;
 
@@ -73,9 +73,11 @@ public class ServerConfig extends AuthorizationServerConfigurerAdapter {
 
     @Override
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
-        // 配置tokenStore，保存到redis缓存中
         endpoints.authenticationManager(authenticationManager)
-                .tokenStore(new MyRedisTokenStore(redisConnectionFactory))
+                // 配置tokenStore，保存到redis缓存中
+//                .tokenStore(new MyRedisTokenStore(redisConnectionFactory))
+                // 配置tokenStore，保存到数据库中
+                .tokenStore(tokenStore())
                 // 不添加userDetailsService，刷新access_token时会报错
                 .userDetailsService(userDetailsService);
 
@@ -85,9 +87,18 @@ public class ServerConfig extends AuthorizationServerConfigurerAdapter {
 
     }
 
-    // 使用最基本的InMemoryTokenStore生成token
+    /**
+     * 使用数据库存储token
+     * @return
+     */
     @Bean
-    public TokenStore memoryTokenStore() {
-        return new InMemoryTokenStore();
+    public TokenStore tokenStore() {
+        return new JdbcTokenStore(dataSource);
     }
+
+//    // 使用最基本的InMemoryTokenStore生成token
+//    @Bean
+//    public TokenStore memoryTokenStore() {
+//        return new InMemoryTokenStore();
+//    }
 }
