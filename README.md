@@ -1,6 +1,6 @@
 ## 本项目出自博客 https://blog.csdn.net/qq_37170583/article/details/80704660，用于自己学习使用
 
-## 使用springboot2.0和oauth2.0实现单点登录
+## 使用springboot2.1和oauth2.0实现单点登录
 
 1. 存储token使用的是redis，所以需要本地启动一个redis服务
 2. 使用数据库保存客户端信息，所以需要在数据库执行sql脚本
