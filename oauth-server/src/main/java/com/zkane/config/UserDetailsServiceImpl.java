@@ -18,7 +18,7 @@ import java.util.List;
  * @version: 1.0
  */
 @Component
-public class MyUserDetailsService implements UserDetailsService {
+public class UserDetailsServiceImpl implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         // TODO 这个地方可以通过username从数据库获取正确的用户信息，包括密码和权限等。

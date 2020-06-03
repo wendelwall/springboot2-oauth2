@@ -32,7 +32,7 @@ public class ServerConfig extends AuthorizationServerConfigurerAdapter {
     @Autowired
     RedisConnectionFactory redisConnectionFactory;
 
-    @Qualifier("myUserDetailsService")
+    @Qualifier("userDetailsServiceImpl")
     @Autowired
     private UserDetailsService userDetailsService;
 
