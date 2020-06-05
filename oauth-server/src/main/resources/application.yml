@@ -9,14 +9,14 @@ spring:
 #      client:
 #        registration:
   datasource:
-    url: jdbc:mysql://127.0.0.1:3306/springboot?useSSL=false&useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT
-    username: ENC(WE7YzBua6o3p6KHhh/OKug==)
-    password: ENC(Z/Z8K4CL+Xl2VuTB41xVrn1eA1MHB3R3)
+    url: jdbc:mysql://121.40.68.89:33306/springboot?autoReconnect=true&useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false&serverTimezone=Asia/Shanghai
+    username: dev
+    password: ENC(iAOmlnCcnZL6/FR4Rk0EuWc68CIMTxJ7)
     driver-class-name: com.mysql.cj.jdbc.Driver
   redis:
     database: 0
-    host: 127.0.0.1
-    password: sqlzyydxe
+    host: 121.40.68.89
+    password: ENC(faKI2HCdovKW5aA5JoiJ+a/pNMAJ0YlolXA7dT8hFQSI31hG3bqpQw==)
     timeout: 8000
     port: 6379
   messages:
@@ -25,4 +25,4 @@ spring:
     encoding: UTF-8
 jasypt:
   encryptor:
-    password: abc123
+    password: aba0cbeece9ca5ac39c13055b11fbf51

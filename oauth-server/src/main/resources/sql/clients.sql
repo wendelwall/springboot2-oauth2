@@ -30,7 +30,7 @@ VALUES
 	(
 		'client',
 		NULL,
-		'{noop}secret',
+		'$2a$10$Dnu4Su7W1uZrr2M3l3c6ROviLP9NSta5zDD6afXXhRljWNBGDmfg6',
 		'all',
 		'password,authorization_code,refresh_token,implicit,client_credentials',
 		'http://localhost:8085/login',

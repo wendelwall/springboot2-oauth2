@@ -26,6 +26,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         grantedAuthorityList.add(new MyGrantedAuthority("MY_ROLE1", "MY_MENU1"));
         grantedAuthorityList.add(new SimpleGrantedAuthority("ROLE_USER"));
         grantedAuthorityList.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
-        return new User(username, "{noop}123456", grantedAuthorityList);
+        return new User(username, "$2a$10$qAcq5HTDrqWfVBUtrCWM3uUaz561r8hgAbSNMOgmFpsBXUkVmRidu", grantedAuthorityList);
     }
 }
